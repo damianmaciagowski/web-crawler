@@ -1,5 +1,6 @@
 # Web-crawler
-Simple web-crawler which scraps pages for the informations.
+Simple web-crawler which scraps pages for the informations. Currently the following pages are supported:
+- komputronik
 
 ## How to use
 1. Install python modules from requirements.txt
