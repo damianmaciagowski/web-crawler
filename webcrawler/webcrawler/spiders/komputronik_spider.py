@@ -19,8 +19,8 @@ class KomputronikSpider(scrapy.Spider):
             "//ul[@class='product-entry2-wrap']/li/div/div[1]/a/@href"
         ).extract()
 
-        for product_page in computer_hrefs:
-            yield response.follow(product_page, self.parsejobpage)
+        #for product_page in computer_hrefs:
+        yield from response.follow_all(computer_hrefs, self.parsejobpage)
 
     def parsejobpage(self, response):
         item_loader = ItemLoader(item=KomputronikItem(), selector=response)
