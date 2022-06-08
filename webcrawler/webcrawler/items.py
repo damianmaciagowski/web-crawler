@@ -17,9 +17,7 @@ class KomputronikItem(scrapy.Item):
     price = scrapy.Field(
         input_processor=MapCompose(remove_tags, strip_html5_whitespace),
         output_processor=Compose(
-            lambda v: unicodedata.normalize("NFKD", v[0])
-            .strip()
-            .replace(" ", "")
+            lambda v: unicodedata.normalize("NFKD", v[0]).strip().replace(" ", "")
         ),
     )
     producer = scrapy.Field(
